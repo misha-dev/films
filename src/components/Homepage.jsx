@@ -24,11 +24,14 @@ export default class Homepage extends Component {
       "dancer",
       "wolf",
       "sin",
+      "trigger",
+      "master",
+      "club",
+      "king",
     ];
     const movies = [];
     for (let i = 0; i < movieNames.length; i++) {
       const movieName = movieNames[i];
-      console.log(movieName);
       const response = await fetch(
         `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&t=${movieName}`
       );
