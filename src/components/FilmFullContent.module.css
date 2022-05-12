@@ -1,0 +1,43 @@
+.wrapperMain {
+  min-height: calc(100vh - 44px - 59.2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapperData {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapperData img {
+  height: 450px;
+  width: 350px;
+}
+
+.rating::before {
+  content: "- ";
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.info {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  justify-content: center;
+}
+
+.plot {
+}
+.rated {
+}
+.awards {
+}
+.actors {
+}
+.writer {
+}

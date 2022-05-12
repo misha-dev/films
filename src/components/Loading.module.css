@@ -11,7 +11,7 @@
   height: 200px;
   border-radius: 50%;
   border: 4px dashed green;
-  animation: rotate 5s infinite linear;
+  animation: rotate 6s infinite linear;
 }
 
 @keyframes rotate {

@@ -14,8 +14,9 @@ export default class Layout extends Component {
             repo
           </Link>
         </header>
-
-        <Outlet />
+        <div className={cl.content}>
+          <Outlet />
+        </div>
 
         <footer>
           <div className={cl.footerWrapper}>

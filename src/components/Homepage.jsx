@@ -1,5 +1,4 @@
 import { Component } from "react";
-import cl from "./Homepage.module.css";
 import ListOfFilms from "./ListOfFilms";
 
 export default class Homepage extends Component {
@@ -18,7 +17,7 @@ export default class Homepage extends Component {
       "orange",
       "dance",
       "happiness",
-      "love",
+      "carry",
       "hate",
       "singer",
       "dancer",
@@ -28,6 +27,9 @@ export default class Homepage extends Component {
       "master",
       "club",
       "king",
+      "game",
+      "order",
+      "war",
     ];
     const movies = [];
     for (let i = 0; i < movieNames.length; i++) {
@@ -41,10 +43,6 @@ export default class Homepage extends Component {
     this.setState({ movies });
   }
   render() {
-    return (
-      <div className={cl.content}>
-        <ListOfFilms movies={this.state.movies} />
-      </div>
-    );
+    return <ListOfFilms movies={this.state.movies} />;
   }
 }

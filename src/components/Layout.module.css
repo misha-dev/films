@@ -29,3 +29,10 @@ footer {
   padding: 10px;
   background-color: #c2e4c7;
 }
+
+.content {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 0;
+  min-height: calc(100vh - 44px - 59.2px);
+}
