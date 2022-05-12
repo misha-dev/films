@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Film from "./Film";
 import cl from "./ListOfFilms.module.css";
+import Loading from "./Loading";
 
 export default class ListOfFilms extends Component {
   //props: Title, Year, Released, Runtime, Genre, Poster,imdbID (using as key)
@@ -12,7 +13,7 @@ export default class ListOfFilms extends Component {
             return <Film key={movie.imdbID} {...movie} />;
           })
         ) : (
-          <p>No films found yet</p>
+          <Loading />
         )}
       </div>
     );
