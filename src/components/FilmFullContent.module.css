@@ -23,6 +23,10 @@
   margin-bottom: 10px;
 }
 
+.item:last-child {
+  margin-bottom: 0;
+}
+
 .info {
   font-size: 1.2rem;
   display: flex;
