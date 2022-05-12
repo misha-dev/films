@@ -15,6 +15,8 @@ export default class ListOfFilms extends Component {
         ) : (
           <Loading />
         )}
+
+        {/* <Loading /> */}
       </div>
     );
   }

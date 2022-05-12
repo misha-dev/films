@@ -34,5 +34,5 @@ footer {
   max-width: 1180px;
   margin: 0 auto;
   padding: 20px 0;
-  min-height: calc(100vh - 44px - 59.2px);
+  min-height: calc(100vh - 44px - 59.2px - 40px);
 }
