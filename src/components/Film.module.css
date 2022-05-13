@@ -25,23 +25,15 @@
 
 .wrapperMain {
   display: flex;
-  justify-content: center;
+  width: 100%;
   flex-direction: row;
+  justify-content: space-around;
 }
 
-.plot {
-  flex: 2;
+.type {
 }
 .released {
 }
 
-.runtime {
-}
-
-.wrapperReleasedRuntime {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
+.year {
 }
