@@ -1,0 +1,21 @@
+.wrapperSearch {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapperSearch input {
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid rgb(103, 114, 105);
+}
+
+.wrapperSearch input:focus {
+    border: 2px solid rgb(103, 154, 105);
+}
+
+.wrapperSearch input:focus::placeholder {
+  color: transparent;
+}

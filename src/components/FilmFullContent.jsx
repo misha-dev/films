@@ -61,12 +61,25 @@ export const FilmFullContent = () => {
       {film ? (
         <div className={cl.wrapperMain}>
           <div className={cl.wrapperData}>
-            <img src={film.Poster} alt="" />
+            <img
+              src={
+                // @ts-ignore
+                film.Poster
+              }
+              alt=""
+            />
 
             <div className={cl.info}>
+              <div className={cl.title}>
+                {
+                  // @ts-ignore
+                  film.Title
+                }
+              </div>
               <div className={`${cl.item} ${cl.ratings}`}>
                 Ratings:
-                {film.Ratings.map((rating, index) => {
+                {film// @ts-ignore
+                .Ratings.map((rating, index) => {
                   return (
                     <div className={cl.rating} key={index}>
                       {rating.Source} : {rating.Value}
@@ -75,18 +88,40 @@ export const FilmFullContent = () => {
                 })}
               </div>
 
-              <div className={`${cl.item} ${cl.plot}`}>Plot: {film.Plot}</div>
+              <div className={`${cl.item} ${cl.plot}`}>
+                Plot:{" "}
+                {
+                  // @ts-ignore
+                  film.Plot
+                }
+              </div>
               <div className={`${cl.item} ${cl.rated}`}>
-                Rated: {film.Rated}
+                Rated:{" "}
+                {
+                  // @ts-ignore
+                  film.Rated
+                }
               </div>
               <div className={`${cl.item} ${cl.awards}`}>
-                Awards: {film.Awards}
+                Awards:{" "}
+                {
+                  // @ts-ignore
+                  film.Awards
+                }
               </div>
               <div className={`${cl.item} ${cl.actors}`}>
-                Actors: {film.Actors}
+                Actors:{" "}
+                {
+                  // @ts-ignore
+                  film.Actors
+                }
               </div>
               <div className={`${cl.item} ${cl.writer}`}>
-                Writer: {film.Writer}
+                Writer:{" "}
+                {
+                  // @ts-ignore
+                  film.Writer
+                }
               </div>
             </div>
           </div>

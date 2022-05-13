@@ -1,5 +1,6 @@
 import { Component } from "react";
 import ListOfFilms from "./ListOfFilms";
+import Search from "./Search";
 
 export default class Homepage extends Component {
   constructor(props) {
@@ -8,16 +9,23 @@ export default class Homepage extends Component {
       movies: [],
     };
   }
-  async componentDidMount() {
-    const movieName = "matrix";
+
+  searchMovies = async (movieName) => {
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}`
     );
     const movies = await response.json();
-    console.log(movies.Search);
-    this.setState({ movies: movies.Search }); 
+    this.setState({ movies: movies.Search });
+  };
+  componentDidMount() {
+    this.searchMovies("matrix");
   }
   render() {
-    return <ListOfFilms movies={this.state.movies} />;
+    return (
+      <>
+        <Search />
+        <ListOfFilms movies={this.state.movies} />
+      </>
+    );
   }
 }
