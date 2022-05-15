@@ -7,7 +7,6 @@ export default class Film extends Component {
   //props: Title, Year, Released, Runtime, Genre, Poster
 
   render() {
-    console.log(this.props);
     return (
       <div className={cl.card}>
         <Link to={`/${this.props.imdbID}`}>

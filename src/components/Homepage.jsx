@@ -10,20 +10,22 @@ export default class Homepage extends Component {
     };
   }
 
-  searchMovies = async (movieName) => {
+  searchMovie = async (movieName) => {
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}`
     );
     const movies = await response.json();
-    this.setState({ movies: movies.Search });
+    this.setState({
+      movies: movies.Search,
+    });
   };
   componentDidMount() {
-    this.searchMovies("matrix");
+    this.searchMovie("matrix");
   }
   render() {
     return (
       <>
-        <Search />
+        <Search searchMovie={this.searchMovie} />
         <ListOfFilms movies={this.state.movies} />
       </>
     );
