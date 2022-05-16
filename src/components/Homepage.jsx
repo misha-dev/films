@@ -10,17 +10,34 @@ export default class Homepage extends Component {
     };
   }
 
-  searchMovie = async (movieName) => {
-    const response = await fetch(
-      `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}`
-    );
+  searchMovie = async (movieName, type = "") => {
+    let response;
+    if (type && movieName) {
+      console.log(
+        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}&type=${type}`
+      );
+      response = await fetch(
+        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}&type=${type}`
+      );
+    } else {
+      response = await fetch(
+        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}`
+      );
+    }
+
     const movies = await response.json();
-    this.setState({
-      movies: movies.Search,
-    });
+    if (movies.Response === "False") {
+      this.setState({ movies: movies.Error });
+    } else {
+      this.setState((prevState) => {
+        return {
+          movies: movies.Search,
+        };
+      });
+    }
   };
   componentDidMount() {
-    this.searchMovie("matrix");
+    this.searchMovie("pirates");
   }
   render() {
     return (

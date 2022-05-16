@@ -1,5 +1,5 @@
 .loading {
-  min-height: calc(100vh - 44px - 59.2px - 40px);
+  min-height: calc(100vh - 44px - 59.2px - 40px - 39.2px - 66px);
   min-width: 1180px;
   display: flex;
   justify-content: center;

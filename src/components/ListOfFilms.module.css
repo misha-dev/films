@@ -4,3 +4,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
+
+.noFilms {
+  min-height: calc(100vh - 44px - 59.2px - 40px - 39.2px - 66px);
+}

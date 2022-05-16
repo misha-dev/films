@@ -78,8 +78,8 @@ export const FilmFullContent = () => {
               </div>
               <div className={`${cl.item} ${cl.ratings}`}>
                 Ratings:
-                {film// @ts-ignore
-                .Ratings.map((rating, index) => {
+                {film.Ratings.map((rating, index) => { // @ts-ignore
+                  // @ts-ignore
                   return (
                     <div className={cl.rating} key={index}>
                       {rating.Source} : {rating.Value}

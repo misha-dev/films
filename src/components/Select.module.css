@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+.filmType {
+  margin-right: 5px;
+}
+
+.wrapper label {
+  margin: 0 10px;
+}

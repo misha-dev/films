@@ -1,6 +1,6 @@
 .wrapperMain {
   min-height: calc(100vh - 44px - 59.2px - 40px);
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: center;
 }
