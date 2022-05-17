@@ -11,9 +11,9 @@ export default class App extends Component {
     return (
       <>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/films" element={<Layout />}>
             <Route index element={<Homepage />} />
-            <Route path=":id" element={<FilmFullContent />} />
+            <Route path="/films/:id" element={<FilmFullContent />} />
           </Route>
         </Routes>
       </>

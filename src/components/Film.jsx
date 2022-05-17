@@ -9,7 +9,7 @@ export default class Film extends Component {
   render() {
     return (
       <div className={cl.card}>
-        <Link to={`/${this.props.imdbID}`}>
+        <Link to={`/films/${this.props.imdbID}`}>
           <img alt="" className={cl.poster} src={this.props.Poster} />
         </Link>
         <div className={cl.filmTitle}>{this.props.Title}</div>

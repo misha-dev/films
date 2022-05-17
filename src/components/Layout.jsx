@@ -7,10 +7,10 @@ export default class Layout extends Component {
     return (
       <>
         <header>
-          <Link to={"/"} className={cl.logo}>
+          <Link to={"/films"} className={cl.logo}>
             React movies
           </Link>
-          <Link to={"/"} className={cl.repository}>
+          <Link to={"/films"} className={cl.repository}>
             repo
           </Link>
         </header>
