@@ -1,6 +1,6 @@
 .wrapperMain {
   min-height: calc(100vh - 44px - 59.2px - 40px);
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -13,6 +13,7 @@
 .wrapperData img {
   height: 450px;
   width: 350px;
+  background: #dbffe2 center center/cover no-repeat;
 }
 
 .rating::before {

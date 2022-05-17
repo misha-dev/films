@@ -6,7 +6,7 @@ export default class Search extends Component {
     super(props);
     this.state = {
       search: "",
-      type: "",
+      type: "all",
     };
 
     // this.setState = this.setState.bind(this);
@@ -17,7 +17,7 @@ export default class Search extends Component {
   handleEnter = (e) => {
     if (e.key === "Enter") {
       this.props.searchMovie(this.state.search, this.state.type);
-      this.setState({ search: "", type: "" });
+      this.setState({ search: "" });
       this.refToInput.current.blur();
     }
   };
@@ -27,7 +27,7 @@ export default class Search extends Component {
     this.setState({ search: "" });
     this.refToInput.current.blur();
   };
-
+  
   changeType = (e) => {
     this.setState({ type: e.target.value });
   };
@@ -58,7 +58,7 @@ export default class Search extends Component {
             Search
           </button>
         </div>
-        <Select changeType={this.changeType} />
+        <Select changeType={this.changeType} type={this.state.type} />
       </>
     );
   }

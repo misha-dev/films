@@ -10,9 +10,9 @@ export default class Homepage extends Component {
     };
   }
 
-  searchMovie = async (movieName, type = "") => {
+  searchMovie = async (movieName, type = "all") => {
     let response;
-    if (type && movieName) {
+    if (type !== "all" && movieName) {
       console.log(
         `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}&type=${type}`
       );

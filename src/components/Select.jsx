@@ -9,9 +9,10 @@ export default class Select extends Component {
           <input
             onChange={this.props.changeType}
             className={cl.filmType}
-            value=""
+            value="all"
             name="filmType"
             type="radio"
+            checked={this.props.type === "all"}
           />
           <span>All</span>
         </label>
@@ -22,6 +23,7 @@ export default class Select extends Component {
             value="movie"
             name="filmType"
             type="radio"
+            checked={this.props.type === "movie"}
           />
           <span>Movie</span>
         </label>
@@ -32,6 +34,7 @@ export default class Select extends Component {
             value="series"
             name="filmType"
             type="radio"
+            checked={this.props.type === "series"}
           />
           <span>Series</span>
         </label>

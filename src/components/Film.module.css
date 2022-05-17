@@ -12,6 +12,10 @@
   box-shadow: 0px 0px 50px grey;
 }
 
+.card img {
+  background: #dbffe2 center center/cover no-repeat;
+}
+
 .poster {
   height: 400px;
   width: 300px;
