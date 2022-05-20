@@ -5,6 +5,11 @@
   gap: 10px;
 }
 
+.observer {
+  height: 20px;
+  width: 100%;
+}
+
 .noFilms {
   min-height: calc(100vh - 44px - 59.2px - 40px - 39.2px - 66px);
 }

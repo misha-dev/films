@@ -16,18 +16,35 @@ export default class Search extends Component {
 
   handleEnter = (e) => {
     if (e.key === "Enter") {
-      this.props.searchMovie(this.state.search, this.state.type);
+      this.props.setSearchParams(
+        {
+          movieName: this.state.search,
+          type: this.state.type,
+        },
+        () => {
+          this.props.searchMovie();
+        }
+      );
       this.setState({ search: "" });
       this.refToInput.current.blur();
     }
   };
 
   handleClick = (e) => {
-    this.props.searchMovie(this.state.search, this.state.type);
+    this.props.setSearchParams(
+      {
+        movieName: this.state.search,
+        type: this.state.type,
+      },
+      () => {
+        this.props.searchMovie();
+      }
+    );
+    this.props.searchMovie();
     this.setState({ search: "" });
     this.refToInput.current.blur();
   };
-  
+
   changeType = (e) => {
     this.setState({ type: e.target.value });
   };
