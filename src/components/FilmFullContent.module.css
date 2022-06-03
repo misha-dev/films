@@ -60,6 +60,10 @@
     flex-direction: column;
   }
 
+  .info {
+    padding-left: 0px;
+  }
+
   .wrapperData img {
     height: 380px;
     width: 280px;
