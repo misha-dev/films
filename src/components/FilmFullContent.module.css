@@ -8,6 +8,15 @@
 .wrapperData {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .wrapperData {
+    flex-direction: column;
+  }
+  
 }
 
 .wrapperData img {
