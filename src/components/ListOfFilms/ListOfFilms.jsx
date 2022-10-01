@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import Film from "./Film";
+
+import Film from "../Film/Film";
+
+import Loading from "../Loader/Loader";
+
 import cl from "./ListOfFilms.module.css";
-import Loading from "./Loading";
 
 export default class ListOfFilms extends Component {
   //props: Title, Year, Released, Runtime, Genre, Poster,imdbID (using as key)

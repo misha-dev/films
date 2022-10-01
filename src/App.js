@@ -2,9 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import { Component } from "react";
-import { FilmFullContent } from "./components/FilmFullContent";
-import Homepage from "./components/Homepage";
-import Layout from "./components/Layout";
+
+import { FilmFullContent } from "./components/FilmFullContent/FilmFullContent";
+import Homepage from "./components/Homepage/Homepage";
+import Layout from "./components/Layout/Layout";
 
 export default class App extends Component {
   render() {

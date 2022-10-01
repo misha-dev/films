@@ -1,5 +1,6 @@
 import { Component } from "react";
-import cl from "./Loading.module.css";
+
+import cl from "./Loader.module.css";
 
 export default class Loading extends Component {
   render() {

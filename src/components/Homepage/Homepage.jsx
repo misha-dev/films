@@ -1,6 +1,7 @@
 import { Component } from "react";
-import ListOfFilms from "./ListOfFilms";
-import Search from "./Search";
+
+import ListOfFilms from "../ListOfFilms/ListOfFilms";
+import Search from "../Search/Search";
 
 export default class Homepage extends Component {
   constructor(props) {

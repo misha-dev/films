@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Link, Outlet } from "react-router-dom";
+
 import cl from "./Layout.module.css";
 
 export default class Layout extends Component {

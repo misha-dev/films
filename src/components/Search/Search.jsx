@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
+import Select from "../Select/Select";
+
 import cl from "./Search.module.css";
-import Select from "./Select";
 export default class Search extends Component {
   constructor(props) {
     super(props);
@@ -67,11 +69,7 @@ export default class Search extends Component {
             placeholder="Enter movie name"
           />
 
-          <button
-            onClick={this.handleClick}
-            style={{ marginLeft: "10px" }}
-            className="buttonGreen"
-          >
+          <button onClick={this.handleClick} style={{ marginLeft: "10px" }} className="buttonGreen">
             Search
           </button>
         </div>
