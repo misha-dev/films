@@ -5,18 +5,18 @@
   align-items: center;
   position: sticky;
   top: 10px;
-  left: 0px;
+  left: 0;
 }
 
 .wrapperSearch input {
   font-size: 1.2rem;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid rgb(103, 114, 105);
+  border: 2px solid rgb(103 114 105);
 }
 
 .wrapperSearch input:focus {
-  border: 2px solid rgb(103, 154, 105);
+  border: 2px solid rgb(103 154 105);
 }
 
 .wrapperSearch input:focus::placeholder {

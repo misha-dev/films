@@ -46,12 +46,16 @@
 
 .plot {
 }
+
 .rated {
 }
+
 .awards {
 }
+
 .actors {
 }
+
 .writer {
 }
 
@@ -61,7 +65,7 @@
   }
 
   .info {
-    padding-left: 0px;
+    padding-left: 0;
   }
 
   .wrapperData img {

@@ -9,7 +9,7 @@
 }
 
 .card:hover {
-  box-shadow: 0px 0px 50px grey;
+  box-shadow: 0 0 50px grey;
 }
 
 .card img {
@@ -36,6 +36,7 @@
 
 .type {
 }
+
 .released {
 }
 

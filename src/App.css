@@ -1,76 +1,85 @@
-/*Reset*/
+/* Reset */
 * {
   padding: 0;
   margin: 0;
   border: 0;
 }
+
 *,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 :focus,
 :active {
   outline: none;
 }
+
 a:focus,
 a:active {
   outline: none;
   text-decoration: none;
 }
+
 nav,
 footer,
 header,
 aside {
   display: block;
 }
+
 html,
 body {
   height: 100%;
   width: 100%;
-  font-size: 100%;
   line-height: 1;
   font-size: 16px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
+
 input,
 button,
 textarea {
   font-family: inherit;
 }
+
 input::-ms-clear {
   display: none;
 }
+
 button {
   cursor: pointer;
 }
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
 a,
 a:visited {
   text-decoration: none;
   color: inherit;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 ul li {
   list-style: none;
 }
+
 img {
   width: 100%;
 }
-/*--------------------*/
+
+/* -------------------- */
 
 .buttonGreen {
   padding: 10px 16px;
-  background-color: rgb(103, 154, 105);
+  background-color: rgb(103 154 105);
   font-size: 1.1rem;
   color: white;
   border-radius: 5px;
@@ -78,5 +87,5 @@ img {
 }
 
 .buttonGreen:hover {
-  box-shadow: inset 1px 1px 10px rgb(155, 155, 43);
+  box-shadow: inset 1px 1px 10px rgb(155 155 43);
 }

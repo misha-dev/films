@@ -19,11 +19,13 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media all and (max-width: 1040px) {
   .gridWrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media all and (max-width: 680px) {
   .gridWrapper {
     grid-template-columns: 1fr;
