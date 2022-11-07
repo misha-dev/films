@@ -13,9 +13,10 @@ export const FilmFullContent = () => {
   useEffect(() => {
     const fetchController = new AbortController();
     const { signal } = fetchController;
-    fetch(url, signal)
+    fetch(url, { signal })
       .then((resp) => resp.json())
-      .then((resp) => setFilm(resp));
+      .then((resp) => setFilm(resp))
+      .catch(() => {});
 
     return () => {
       fetchController.abort();
