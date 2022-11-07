@@ -5,56 +5,21 @@ import Loading from "../Loader/Loader";
 
 import cl from "./FilmFullContent.module.css";
 
-// {
-//     "Title": "Iron Man",
-//     "Year": "2008",
-//     "Rated": "PG-13",
-//     "Released": "02 May 2008",
-//     "Runtime": "126 min",
-//     "Genre": "Action, Adventure, Sci-Fi",
-//     "Director": "Jon Favreau",
-//     "Writer": "Mark Fergus, Hawk Ostby, Art Marcum",
-//     "Actors": "Robert Downey Jr., Gwyneth Paltrow, Terrence Howard",
-//     "Plot": "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.",
-//     "Language": "English, Persian, Urdu, Arabic, Kurdish, Hindi, Hungarian",
-//     "Country": "United States, Canada",
-//     "Awards": "Nominated for 2 Oscars. 21 wins & 73 nominations total",
-//     "Poster": "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg",
-//     "Ratings": [
-//         {
-//             "Source": "Internet Movie Database",
-//             "Value": "7.9/10"
-//         },
-//         {
-//             "Source": "Rotten Tomatoes",
-//             "Value": "94%"
-//         },
-//         {
-//             "Source": "Metacritic",
-//             "Value": "79/100"
-//         }
-//     ],
-//     "Metascore": "79",
-//     "imdbRating": "7.9",
-//     "imdbVotes": "1,023,580",
-//     "imdbID": "tt0371746",
-//     "Type": "movie",
-//     "DVD": "30 Sep 2008",
-//     "BoxOffice": "$319,034,126",
-//     "Production": "N/A",
-//     "Website": "N/A",
-//     "Response": "True"
-// }
 export const FilmFullContent = () => {
   const params = useParams();
   const id = params.id;
   const [film, setFilm] = useState();
+  const url = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&i=${id}`;
   useEffect(() => {
-    fetch(
-      `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&i=${id}`
-    )
+    const fetchController = new AbortController();
+    const { signal } = fetchController;
+    fetch(url, signal)
       .then((resp) => resp.json())
       .then((resp) => setFilm(resp));
+
+    return () => {
+      fetchController.abort();
+    };
   }, [id]);
 
   // @ts-ignore

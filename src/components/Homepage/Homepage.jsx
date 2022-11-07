@@ -14,26 +14,35 @@ export default class Homepage extends Component {
     };
 
     this.setState = this.setState.bind(this);
-    this.fetchContoller = new AbortController();
   }
 
   searchMovie = async (page = 1) => {
+    const url = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${this.state.movieName}&type=${this.state.type === "all" ? "" : this.state.type}&page=${page}`;
+    this.fetchController = new AbortController();
+    const { signal } = this.fetchController;
 
+    const response = await fetch(url, { signal }).catch((error) => {
+      console.log(error);
+    });
 
-    const response = await fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${this.state.movieName}&type=${this.state.type === "all" ? "" : this.state.type}&page=${page}`);
-
-    const movies = await response.json();
-    if (movies.Response === "False") {
-      this.setState({ movies: movies.Error }, () => {});
-    } else {
-      this.setState({
-        movies: movies.Search,
-        totalPages: +movies.totalResults / 10,
-      });
+    if (response) {
+      const movies = await response.json();
+      if (movies.Response === "False") {
+        this.setState({ movies: movies.Error }, () => {});
+      } else {
+        this.setState({
+          movies: movies.Search,
+          totalPages: +movies.totalResults / 10,
+        });
+      }
     }
   };
   componentDidMount() {
     this.searchMovie();
+  }
+
+  componentWillUnmount() {
+    this.fetchController.abort();
   }
 
   render() {
