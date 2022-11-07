@@ -14,35 +14,17 @@ export default class Homepage extends Component {
     };
 
     this.setState = this.setState.bind(this);
+    this.fetchContoller = new AbortController();
   }
 
   searchMovie = async (page = 1) => {
-    let response;
-    // if (type !== "all" && movieName) {
-    //   console.log(
-    //     `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}&type=${type}&page=${page}`
-    //   );
-    //   response = await fetch(
-    //     `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}&type=${type}&page=${page}`
-    //   );
-    // } else {
-    //   response = await fetch(
-    //     `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${movieName}&page=${page}`
-    //   );
-    // }
 
-    response = await fetch(
-      `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${
-        this.state.movieName
-      }&type=${this.state.type === "all" ? "" : this.state.type}&page=${page}`
-    );
+
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${this.state.movieName}&type=${this.state.type === "all" ? "" : this.state.type}&page=${page}`);
 
     const movies = await response.json();
-    // console.log(movies);
     if (movies.Response === "False") {
-      this.setState({ movies: movies.Error }, () => {
-        // console.log(this.state.movies);
-      });
+      this.setState({ movies: movies.Error }, () => {});
     } else {
       this.setState({
         movies: movies.Search,
@@ -57,10 +39,7 @@ export default class Homepage extends Component {
   render() {
     return (
       <>
-        <Search
-          setSearchParams={this.setState}
-          searchMovie={this.searchMovie}
-        />
+        <Search setSearchParams={this.setState} searchMovie={this.searchMovie} />
         <ListOfFilms
           movies={this.state.movies}
           searchMovie={this.searchMovie}
