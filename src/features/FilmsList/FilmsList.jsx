@@ -21,7 +21,7 @@ export default class FilmsList extends Component {
           console.log(this.state.page);
           this.setState({ page: this.state.page + 1 }, async () => {
             const response = await fetch(
-              `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${this.props.movieName}&type=${this.props.type === 'all' ? '' : this.props.type}&page=${this.state.page}`
+              `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API}&s=${this.props.searchedMovieName}&type=${this.props.type === 'all' ? '' : this.props.type}&page=${this.state.page}`
             );
 
             const movies = await response.json();

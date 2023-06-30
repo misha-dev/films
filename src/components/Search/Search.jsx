@@ -2,40 +2,27 @@ import React, { Component } from 'react';
 
 import Select from '../Select/Select';
 
+import { getCurrentQuery, setCurrentQuery } from '../../utils';
+
+import { defaultSearchQuery } from '../../data';
+
 import cl from './Search.module.css';
 export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: '',
+      search: getCurrentQuery() || defaultSearchQuery,
       type: 'all',
     };
-
-    // this.setState = this.setState.bind(this);
 
     this.refToInput = React.createRef();
   }
 
-  handleEnter = (e) => {
-    if (e.key === 'Enter') {
-      this.props.setSearchParams(
-        {
-          movieName: this.state.search,
-          type: this.state.type,
-        },
-        () => {
-          this.props.searchMovie();
-        }
-      );
-      this.setState({ search: '' });
-      this.refToInput.current.blur();
-    }
-  };
-
-  handleClick = (e) => {
+  handleSubmit = () => {
+    setCurrentQuery(this.state.search);
     this.props.setSearchParams(
       {
-        movieName: this.state.search,
+        searchedMovieName: this.state.search,
         type: this.state.type,
       },
       () => {
@@ -43,7 +30,6 @@ export default class Search extends Component {
       }
     );
     this.props.searchMovie();
-    this.setState({ search: '' });
     this.refToInput.current.blur();
   };
 
@@ -54,7 +40,13 @@ export default class Search extends Component {
   render() {
     return (
       <>
-        <div className={cl.wrapperSearch}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            this.handleSubmit();
+          }}
+          className={cl.wrapperSearch}
+        >
           <input
             ref={this.refToInput}
             type="text"
@@ -62,17 +54,14 @@ export default class Search extends Component {
               this.setState({ search: e.target.value });
             }}
             value={this.state.search}
-            onKeyUp={(e) => {
-              this.handleEnter(e);
-            }}
             size={30}
             placeholder="Enter movie name"
           />
 
-          <button onClick={this.handleClick} style={{ marginLeft: '10px' }} className="buttonGreen">
+          <button type="submit" style={{ marginLeft: '10px' }} className="buttonGreen">
             Search
           </button>
-        </div>
+        </form>
         <Select changeType={this.changeType} type={this.state.type} />
       </>
     );
