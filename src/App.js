@@ -1,11 +1,11 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
 
-import { Component } from "react";
+import { Component } from 'react';
 
-import { FilmFullContent } from "./components/FilmFullContent/FilmFullContent";
-import Homepage from "./components/Homepage/Homepage";
-import Layout from "./components/Layout/Layout";
+import Layout from './features/Layout/Layout';
+import { FilmContentPage } from './pages/FilmContentPage/FilmContentPage';
+import Homepage from './pages/Homepage/Homepage';
 
 export default class App extends Component {
   render() {
@@ -14,7 +14,7 @@ export default class App extends Component {
         <Routes>
           <Route path="/films" element={<Layout />}>
             <Route index element={<Homepage />} />
-            <Route path="/films/:id" element={<FilmFullContent />} />
+            <Route path="/films/:id" element={<FilmContentPage />} />
           </Route>
         </Routes>
       </>
