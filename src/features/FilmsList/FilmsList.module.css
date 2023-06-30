@@ -11,7 +11,7 @@
 }
 
 .noFilms {
-  min-height: calc(100vh - 44px - 59.2px - 40px - 39.2px - 66px);
+  min-height: var(--films-wrapper-height);
 }
 
 @media all and (max-width: 1750px) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Film, Loader } from '../../components';
+import { Film, Loader, NotFound } from '../../components';
 
 import cl from './FilmsList.module.css';
 
@@ -62,7 +62,7 @@ export default class FilmsList extends Component {
         </>
       );
     } else {
-      return <div>There is no such a film:(</div>;
+      return <NotFound />;
     }
   }
 }

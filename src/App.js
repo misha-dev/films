@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import { Component } from 'react';
@@ -20,6 +20,7 @@ export default class App extends Component {
             <Route index element={<Homepage />} />
             <Route path="/films/:id" element={<FilmContentPage />} />
           </Route>
+          <Route path="*" element={<Navigate to="/films" />} />
         </Routes>
       </>
     );

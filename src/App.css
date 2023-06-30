@@ -1,3 +1,10 @@
+:root {
+  --layout-height: calc(100vh - 44px - 59.2px);
+  --films-page-height: calc(100vh - 44px - 59.2px - 40px);
+  --films-wrapper-height: calc(100vh - 44px - 59.2px - 40px - 39.2px - 66px);
+  --film-content-height: calc(100vh - 44px - 59.2px - 40px);
+}
+
 /* Reset */
 * {
   padding: 0;

@@ -1,5 +1,5 @@
 .wrapperMain {
-  min-height: calc(100vh - 44px - 59.2px - 40px);
+  min-height: var(--film-content-height);
   display: flex;
   justify-content: center;
   align-items: center;
