@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Select from "../Select/Select";
+import Select from '../Select/Select';
 
-import cl from "./Search.module.css";
+import cl from './Search.module.css';
 export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: "",
-      type: "all",
+      search: '',
+      type: 'all',
     };
 
     // this.setState = this.setState.bind(this);
@@ -17,7 +17,7 @@ export default class Search extends Component {
   }
 
   handleEnter = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       this.props.setSearchParams(
         {
           movieName: this.state.search,
@@ -27,7 +27,7 @@ export default class Search extends Component {
           this.props.searchMovie();
         }
       );
-      this.setState({ search: "" });
+      this.setState({ search: '' });
       this.refToInput.current.blur();
     }
   };
@@ -43,7 +43,7 @@ export default class Search extends Component {
       }
     );
     this.props.searchMovie();
-    this.setState({ search: "" });
+    this.setState({ search: '' });
     this.refToInput.current.blur();
   };
 
@@ -69,7 +69,7 @@ export default class Search extends Component {
             placeholder="Enter movie name"
           />
 
-          <button onClick={this.handleClick} style={{ marginLeft: "10px" }} className="buttonGreen">
+          <button onClick={this.handleClick} style={{ marginLeft: '10px' }} className="buttonGreen">
             Search
           </button>
         </div>

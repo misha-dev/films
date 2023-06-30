@@ -1,7 +1,7 @@
-import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import cl from "./Film.module.css";
+import cl from './Film.module.css';
 
 export default class Film extends Component {
   //props: Title, Year, Released, Runtime, Genre, Poster

@@ -11,7 +11,7 @@ export default class Layout extends Component {
           <Link to={'/films'} className={cl.logo}>
             React movies
           </Link>
-          <a target="_blank" href="https://github.com/misha-dev/films" className={cl.repository}>
+          <a target="_blank" href="https://github.com/misha-dev/films" className={cl.repository} rel="noreferrer">
             repo
           </a>
         </header>
@@ -22,7 +22,7 @@ export default class Layout extends Component {
         <footer>
           <div className={cl.footerWrapper}>
             <div className="copyright">&copy; {new Date().getFullYear()} Copyright Info</div>
-            <a target="_blank" href="https://github.com/misha-dev/films" className={cl.repository}>
+            <a target="_blank" href="https://github.com/misha-dev/films" className={cl.repository} rel="noreferrer">
               repo
             </a>
           </div>

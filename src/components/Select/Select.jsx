@@ -1,6 +1,6 @@
-import { Component } from "react";
+import { Component } from 'react';
 
-import cl from "./Select.module.css";
+import cl from './Select.module.css';
 
 export default class Select extends Component {
   render() {
@@ -13,7 +13,7 @@ export default class Select extends Component {
             value="all"
             name="filmType"
             type="radio"
-            checked={this.props.type === "all"}
+            checked={this.props.type === 'all'}
           />
           <span>All</span>
         </label>
@@ -24,7 +24,7 @@ export default class Select extends Component {
             value="movie"
             name="filmType"
             type="radio"
-            checked={this.props.type === "movie"}
+            checked={this.props.type === 'movie'}
           />
           <span>Movie</span>
         </label>
@@ -35,7 +35,7 @@ export default class Select extends Component {
             value="series"
             name="filmType"
             type="radio"
-            checked={this.props.type === "series"}
+            checked={this.props.type === 'series'}
           />
           <span>Series</span>
         </label>
