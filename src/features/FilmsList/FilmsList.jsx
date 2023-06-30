@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import Film from '../../components/Film/Film';
-
-import Loading from '../../components/Loader/Loader';
+import { Film, Loader } from '../../components';
 
 import cl from './FilmsList.module.css';
 
@@ -59,7 +57,7 @@ export default class FilmsList extends Component {
               <div ref={this.observerRef} className={cl.observer}></div>
             </>
           ) : (
-            <Loading />
+            <Loader />
           )}
         </>
       );

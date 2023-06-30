@@ -1,15 +1,14 @@
 import { Component } from 'react';
 
-import Search from '../../components/Search/Search';
-import { defaultSearchQuery } from '../../data';
-import FilmsList from '../../features/FilmsList/FilmsList';
 import { getCurrentQuery } from '../../utils';
+import { Search } from '../../components';
+import { FilmsList } from '../../features';
 
 export default class Homepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchedMovieName: getCurrentQuery() || defaultSearchQuery,
+      searchedMovieName: getCurrentQuery(),
       type: 'all',
       movies: [],
       totalPages: 0,

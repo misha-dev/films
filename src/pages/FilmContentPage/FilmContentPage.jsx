@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Loading from '../../components/Loader/Loader';
+import { Loader } from '../../components';
 
 import cl from './FilmContentPage.module.css';
 
@@ -41,7 +41,7 @@ export const FilmContentPage = () => {
           </div>
         </div>
       ) : (
-        <Loading />
+        <Loader />
       )}
     </>
   );

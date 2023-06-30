@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 
-import Select from '../Select/Select';
-
 import { getCurrentQuery, setCurrentQuery } from '../../utils';
 
-import { defaultSearchQuery } from '../../data';
+import Select from '../Select/Select';
 
 import cl from './Search.module.css';
+
 export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: getCurrentQuery() || defaultSearchQuery,
+      search: getCurrentQuery(),
       type: 'all',
     };
 
