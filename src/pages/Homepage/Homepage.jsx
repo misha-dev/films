@@ -54,7 +54,7 @@ export default class Homepage extends Component {
         <FilmsList
           movies={this.state.movies}
           searchMovie={this.searchMovie}
-          movieName={this.state.searchedMovieName}
+          searchedMovieName={this.state.searchedMovieName}
           type={this.state.type}
           setSearchParams={this.setState}
           totalPages={this.state.totalPages}
